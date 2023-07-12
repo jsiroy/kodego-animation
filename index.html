@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ccs-animation</title>
+    <style>
+        .background-image {
+            background-image: url(./resources/background.png);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .female-pic { 
+            height: 50vh;
+        }
+
+        /* animation seq-1 starts here */
+        .female-pic { 
+            opacity: 0;  
+            animation-name: female-pic-animation;
+            animation-duration: 2s;
+        } 
+
+        @keyframes female-pic-animation {
+            0%  {opacity: .0;}
+            50% {opacity:  1;}
+            90% {opacity:  1;}
+            100% {opacity: .0;}
+        } 
+        /* animation seq-1 ends here */
+
+        /* animation seq-2 starts here */
+        .headline-1-container {
+            opacity: 0;
+            animation-name: headline-1-animation-container;
+            animation-duration: 2s;
+            animation-direction: normal;
+            padding-left: 25%;
+            animation-delay: 1s;
+        }
+
+        @keyframes headline-1-animation-container {
+            0% {
+                padding-left: 0;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }    
+            50% {
+                padding-left: 25%;
+                opacity: 1;
+            }
+        }
+
+        /* animation seq-2 ends here */
+
+        /* animation seq-3 starts here */
+        .headline-1 {
+            height: 25vh;
+            width: 90vh;
+            animation-name: headline-1-animation;
+            animation-delay: 2s;
+            animation-duration: 1s;
+        }
+
+        @keyframes headline-1-animation {
+            0% {height: 25vh; width: 90vh;}
+            100% {height: 0vh; width: 0vh; padding-left: 60%;}
+        }
+
+        /* animaiton seq-3 ends here */
+        /* animation seq-4  starts here*/
+        .headline-2 {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            top: 15%; 
+            left: 20%;
+            height: 20vh;
+            width: 90vh;
+            animation-name: headline-2-animation;
+            animation-duration: 1s;
+        }
+
+        @keyframes headline-2-animation {
+            from {               
+                top: 15%;
+                left: 70%;
+            }
+            to {  
+                top: 15%; 
+                left: 20%;
+            }
+        }
+        /* animation seq-4 ends here */
+        /* animaiton seq-5 start here */
+        .logo-img{
+            height: 60vh;
+            width: 60vh;
+        }
+
+        .logo{
+            display: none;
+            position: absolute;
+            z-index: 1;
+            top: 0%; 
+            left: 60%;
+            animation-name: logo-animation;
+            animation-duration: 1s;
+        }
+
+        @keyframes logo-animation{
+            0% {
+                top: 0%; 
+                left: 0%;  
+            }
+            100% {
+                top: 0%; 
+                left: 60%;  
+            } 
+        }
+        /* animation seq-5 ends here */
+        /* animation seq-6 starts here */
+        .sub-headline-img{
+            height: 40vh;
+            width: 60vh;
+            animation-name: sub-headline-animation;
+            animation-duration: 1s;
+        }
+        .sub-headline {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            top: 45%; 
+            left: 60%;
+        }
+
+        @keyframes sub-headline-animation {
+            0% {
+                height: 0vh;
+                width: 0vh;
+            }
+            100% {
+                height: 40vh;
+                width: 60vh;
+            } 
+        }
+
+        /* animaiton seq-6 ends here */
+        /* aniamtion seq-7 starts here */
+        .lear-more-img{
+            border-radius: 15px !important;
+            height: 40vh;
+            width: 60vh;
+            animation-name: learn-more-animation;
+            animation-duration: 1s;
+        }
+        .learn-more {
+            justify-content: center;
+            display: none;
+            position: absolute;
+            z-index: 1;
+            top: 60%; 
+            left: 38%;
+        }
+
+        @keyframes learn-more-animation {
+            0% {
+                height: 0vh;
+                width: 0vh;
+            }
+            100% {
+                height: 40vh;
+                width: 60vh;
+            } 
+        }
+        /* animation seq-7 ends here */
+        /* animatione seq-8 starts here */
+        .replay-img{
+            height: 20px;
+            width: 50px;
+            animation-name: replay-animation;
+            animation-duration: 1s;
+        }
+
+        .replay {
+            border-radius: 15px;
+            display:flex;
+            justify-content: center;
+            display: none;
+            position: absolute;
+            z-index: 1;
+            top: 74%; 
+            left: 41%;
+        }
+
+        @keyframes replay-animation {
+            0% {
+                height: 0vh;
+                width: 0vh;
+            }
+            100% {
+                height: 20px;
+                width: 50px;
+            } 
+        }
+
+        /* animaiton seq-8 ends here */
+        .item-1 {
+            display: flex;
+            flex-direction: column;
+        }  
+
+        .female-pic-container {
+            padding-top: 10%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .headline-1-container {
+            display: flex;
+            justify-content: start;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+    </style>
+</head>
+<body class="background-image">
+    <section>
+        <div class="d-flex">
+            <div class="w-100">
+                <div class="item-1 animation-sequence">
+                    <div class="w-100 seq-1">
+                        <div class="female-pic-container">
+                            <img class="female-pic" src="./resources/female.png" alt="female with laptop">
+                        </div>
+                    </div>
+                    <div class="seq-2">
+                        <div class="headline-1-container">
+                            <img class="headline-1" src="./resources/headline1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seq-3">
+            <div class="headline-2">
+                <img src="./resources/headline2.png" alt="headline 2">
+            </div>   
+        </div>
+        <div class="seq-4">
+            <div class="logo">
+                <img class="logo-img" src="./resources/logo.png" alt="kodego logo">
+            </div>   
+        </div>
+    </section>
+    <div class="seq-5">
+        <div class="sub-headline">
+            <img class="sub-headline-img" src="./resources/subheadline.png" alt="sub Headline">
+        </div>   
+    </div>
+    <div class="seq-6">
+        <div class="learn-more">
+            <button id="learn-more-btn" >
+               <div >
+                  <img class="learn-more-img" src="./resources/learnmore.png" alt="learn more">
+              </div> 
+            </button>
+        </div>   
+    </div>
+    <div class="seq-7">
+        <div class="replay">
+            <button id="replay-btn" class="replay-img">
+                <img src="./resources/replay.png" alt="replay">
+            </button>
+        </div>   
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                let elements = document.getElementsByClassName("headline-2");
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            }, 1800);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                let elements = document.getElementsByClassName("logo");
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            }, 3800);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                let elements = document.getElementsByClassName("sub-headline");
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            }, 2000);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                let elements = document.getElementsByClassName("learn-more");
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            }, 3000);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                let elements = document.getElementsByClassName("replay");
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            }, 3500);
+        });
+
+        document.getElementById("learn-more-btn").addEventListener("click", function() {
+            window.location.href = "https://kodego.ph/";
+        });
+
+        document.getElementById("replay-btn").addEventListener("click", function() {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
+
+
